@@ -6,8 +6,6 @@
   "scripts": {
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
     "start": "webpack-dev-server --progress --profile --colors --port 3000",
-    "startDB": "sudo service mongod start sudo mongod --dbpath=/home/lev/mongodbdata",
-    "stopDB": "sudo service mongod stop",
     "lint": "eslint --ext js --ext jsx src || exit 0",
     "dev": " webpack-dashboard -- webpack-dev-server --progress --profile --colors"
   },
@@ -19,6 +17,7 @@
   "license": "MIT",
   "homepage": "https://github.com/alicoding/react-webpack-babel#readme",
   "dependencies": {
+    "axios": "^0.16.1",
     "body-parser": "^1.17.1",
     "mongodb": "^2.2.26",
     "node-sass": "^4.3.0",
