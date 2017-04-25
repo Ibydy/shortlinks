@@ -24,10 +24,7 @@ export default class App extends React.Component {
 	makeRequest(link) {
 		axios.post(`http://localhost:3001/addShortLink`, {link: link})
 			.then(res => {
-				this.setState({
-					value: this.state.value,
-					link: {fullLink: res.data.fullLink, shortLink: res.data.shortLink}
-				});
+				this.setState({link: {fullLink: res.data.fullLink, shortLink: res.data.shortLink}});
 			}, (error) => console.log(`Request err ${error}`));
 	}
 
@@ -49,7 +46,6 @@ export default class App extends React.Component {
 					{this.state.link.shortLink}
 				</a>
 			</div>
-
 		)
 	}
 }

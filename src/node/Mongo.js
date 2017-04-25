@@ -20,12 +20,12 @@ class Mongo {
 				callback(JSON.stringify(result));
 				return;
 			}
-			collection.insertOne(new Link(link), function (err, result) {
+			collection.insertOne(new Link(link), (err, result) => {
 				console.log("add link");
+				collection.findOne({fullLink: link}, (err, result) => {
+					callback(JSON.stringify(result));
+				})
 			});
-			collection.findOne({fullLink: link}, (err, result) => {
-				callback(JSON.stringify(result));
-			})
 		});
 	}
 
